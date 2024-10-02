@@ -1,8 +1,5 @@
-import random
+import secrets
 import string
-
-
-# Generate random number 1-4 (in accordance with list number)
 
 def password():
 
@@ -14,24 +11,25 @@ def password():
     password = ""
 
     while len(password) < 18:
-        list_pick = random.randint(1, 4)
+        list_nums = [1, 2, 3, 4]
+        list_pick = secrets.choice(list_nums)
 
         if list_pick == 1:
-            char = random.choice(lowercase_1)
+            char = secrets.choice(lowercase_1)
             lowercase_1.remove(char)
             password += char
 
         elif list_pick == 2:
-            char = random.choice(uppercase_2)
+            char = secrets.choice(uppercase_2)
             uppercase_2.remove(char)
             password += char
 
         elif list_pick == 3:
-            char = random.choice(digits_3)
+            char = secrets.choice(digits_3)
             password += char
 
         else:
-            char = random.choice(symbols_4)
+            char = secrets.choice(symbols_4)
             symbols_4.remove(char)
             password += char
 
@@ -42,8 +40,9 @@ def password():
 
     return password
 
-gen = (password() * 10)
-print(gen)
+for i in range(1, 10):
+    gen = password()
+    print(gen)
 
 
 
