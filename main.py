@@ -45,8 +45,37 @@ def password():
     
     return password
 
-for i in range(1, 50):
-    print(password())
+
+
+
+### GUI ###
+
+# Main
+if __name__ == "__main__":
+    root = tk.Tk()
+    root.title("KeyForge")
+
+    # Styling
+    root.geometry("650x225")
+    root.resizable(False, False)
+    bg_colour = "#212121"
+    fg_colour = "#f3f3f3"
+    accent_colour = "#f3f3f3"
+    entry_bg_colour = "#212121"
+    button_colour = "#00bc8c"
+    button_hover_colour = "#00e6ab"
+
+    title_font = tkfont.Font(family="Gadugi", size=30, weight="bold")
+    subtitle_font = tkfont.Font(family="Gadugi", size=13)
+    main_font = tkfont.Font(family="Gadugi", size=12)
+    result_font = tkfont.Font(family="Gadugi", size=16)
+
+    style = tkb.Style()
+    style.theme_use("darkly")
+
+# Event loop
+root.configure(bg=bg_colour)
+root.mainloop()
     
 
 
