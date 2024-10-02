@@ -3,48 +3,47 @@ import string
 
 
 # Generate random number 1-4 (in accordance with list number)
-lowercase_1 = list(string.ascii_lowercase)
-uppercase_2 = list(string.ascii_uppercase)
-digits_3 = list(string.digits)
-symbols_4 = list(string.punctuation)
 
-password = ""
+def password():
 
-while len(password) < 18:
-    list_pick = random.randint(1, 4)
+    lowercase_1 = list(string.ascii_lowercase)
+    uppercase_2 = list(string.ascii_uppercase)
+    digits_3 = list(string.digits)
+    symbols_4 = list(string.punctuation)
 
-    if list_pick == 1:
-        char = random.choice(lowercase_1)
-        lowercase_1.remove(char)
-        password += char
+    password = ""
 
-    elif list_pick == 2:
-        char = random.choice(uppercase_2)
-        uppercase_2.remove(char)
-        password += char
+    while len(password) < 18:
+        list_pick = random.randint(1, 4)
 
-    elif list_pick == 3:
-        char = random.choice(digits_3)
-        password += char
+        if list_pick == 1:
+            char = random.choice(lowercase_1)
+            lowercase_1.remove(char)
+            password += char
 
-    else:
-        char = random.choice(symbols_4)
-        password += char
+        elif list_pick == 2:
+            char = random.choice(uppercase_2)
+            uppercase_2.remove(char)
+            password += char
 
-print(password)
-    
-    
-# Add element to generated string whilst string < 18 characters
+        elif list_pick == 3:
+            char = random.choice(digits_3)
+            password += char
 
-# When string = 18 characters, print string
+        else:
+            char = random.choice(symbols_4)
+            symbols_4.remove(char)
+            password += char
 
-# Check against password strength meter?
+    lowercase_1 = list(string.ascii_lowercase)
+    uppercase_2 = list(string.ascii_uppercase)
+    digits_3 = list(string.digits)
+    symbols_4 = list(string.punctuation)
 
-# Reset lists
-    # lowercase_1 = string.ascii_lowercase
-    # uppercase_2 = string.ascii_uppercase
-    # digits_3 = string.digits
-    # symbols_4 = string.punctuation
+    return password
+
+gen = (password() * 10)
+print(gen)
 
 
 
