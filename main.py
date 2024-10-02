@@ -43,7 +43,10 @@ def password():
             password += char
 
     
-    return password
+    password_field.config(state="normal")
+    password_field.delete(0, tk.END)
+    password_field.insert(0, password)
+    password_field.config(state="readonly")
 
 
 
