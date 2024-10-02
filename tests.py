@@ -1,25 +1,50 @@
 import random
 import string
 
-letters_1 = string.ascii_letters
-digits_2 = string.digits
-symbols_3 = string.punctuation
-whitespace_4 = " "
-
 
 # Generate random number 1-4 (in accordance with list number)
+lowercase_1 = list(string.ascii_lowercase)
+uppercase_2 = list(string.ascii_uppercase)
+digits_3 = list(string.digits)
+symbols_4 = list(string.punctuation)
 
-    # If number is same as last number generated, do it again
-    # Else if whitespace_4 used more than 3 times, skip
-    # Else pop (remove and use) random element from list number generated
-    # Add element to generated string whilst string < 18 characters
+password = ""
+
+while len(password) < 18:
+    list_pick = random.randint(1, 4)
+
+    if list_pick == 1:
+        char = random.choice(lowercase_1)
+        lowercase_1.remove(char)
+        password += char
+
+    elif list_pick == 2:
+        char = random.choice(uppercase_2)
+        uppercase_2.remove(char)
+        password += char
+
+    elif list_pick == 3:
+        char = random.choice(digits_3)
+        password += char
+
+    else:
+        char = random.choice(symbols_4)
+        password += char
+
+print(password)
+    
+    
+# Add element to generated string whilst string < 18 characters
 
 # When string = 18 characters, print string
 
 # Check against password strength meter?
 
 # Reset lists
-
+    # lowercase_1 = string.ascii_lowercase
+    # uppercase_2 = string.ascii_uppercase
+    # digits_3 = string.digits
+    # symbols_4 = string.punctuation
 
 
 
