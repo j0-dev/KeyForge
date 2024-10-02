@@ -1,0 +1,45 @@
+Spec
+
+Overview:
+A lightweight password generation tool that generates 16-character-long strong passwords.
+
+Key Features:
+    
+    - GUI using TKinter
+    - Offline functionality
+    - Strong passwords with high entropy
+    - Copy to clipboard feature
+
+Tech Spec:
+
+    1. UI:
+        - TKinter
+        - Simple layout w/;
+            ~ "Generate" button
+            ~ Text field
+            ~ Copy to clipboard button
+            ~ Clear button?
+            ~ Save generated passwords locally?
+
+    2. Password strength criteria:
+        - High entropy (100+)
+        - All types of characters included:
+            ~ Uppercase
+            ~ Lowercase
+            ~ Numbers
+            ~ Special characters
+        - No repeat
+        - No sequentials
+
+    3. Privacy and security:
+        - Maybe offline storage of previously generated passwords
+        - Offline functionality only
+
+    4. Dependencies:
+        - Python random library
+        - TKinter
+
+    5. Error handling:
+        - Allow no input
+
+    6. Additional features:
