@@ -73,7 +73,11 @@ if __name__ == "__main__":
     style = tkb.Style()
     style.theme_use("darkly")
     style.configure("TFrame", background=bg_colour)
-    
+    style.configure("TLabel", background=bg_colour, foreground=fg_colour, font=main_font)
+    style.configure("TEntry", fieldbackground=entry_bg_colour, foreground=fg_colour, font=main_font, borderwidth=1, relief="solid")
+    style.configure("Custom.TButton", background=button_colour, foreground=bg_colour, font=main_font, borderwidth=0, focuscolor=button_colour, highlightthickness=0)
+    style.map("Custom.TButton", background=[('active', button_hover_colour)], bordercolor=[('focus', button_colour)], highlightcolor=[('focus', button_colour)])
+
     # Mainframe config
     frame = tkb.Frame(root, padding="10")
     frame.grid(column=0, row=0, sticky=(tk.W, tk.E, tk.N, tk.S), padx=10, pady=10)
@@ -86,6 +90,19 @@ if __name__ == "__main__":
     subtitle_label = tkb.Label(frame, text="Generate strong passwords with a click.", font=subtitle_font, foreground="#9c9c9c")
     header_label.grid(column=0, row=0, columnspan=2, sticky=(tk.W), padx=38, pady=(0, 0))
     subtitle_label.grid(column=0, row=1, columnspan=2, sticky=(tk.W), padx=39, pady=(0, 30))
+
+    # Password gen
+    password_field = tkb.Entry(frame, state="readonly", justify="left", font=main_font, width=35)
+    password_field.grid(row=2, column=0, sticky=(tk.W), padx=40, pady=(0, 5))
+    password_field.configure(takefocus=1)
+    password_field.focus_set()
+
+    # Gen button
+    generate_button = tkb.Button(frame, text="Generate", command=password, width=10, style="Custom.TButton")
+    generate_button.grid(column=0, row=3, pady=(5, 0), padx=40, sticky=(tk.W))
+
+    # Layout
+    frame.columnconfigure(1, weight=1)
 
     # Event loop
     root.configure(bg=bg_colour)
