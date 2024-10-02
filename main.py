@@ -56,7 +56,7 @@ if __name__ == "__main__":
     root.title("KeyForge")
 
     # Styling
-    root.geometry("650x225")
+    root.geometry("500x225")
     root.resizable(False, False)
     bg_colour = "#212121"
     fg_colour = "#f3f3f3"
@@ -72,10 +72,24 @@ if __name__ == "__main__":
 
     style = tkb.Style()
     style.theme_use("darkly")
+    style.configure("TFrame", background=bg_colour)
+    
+    # Mainframe config
+    frame = tkb.Frame(root, padding="10")
+    frame.grid(column=0, row=0, sticky=(tk.W, tk.E, tk.N, tk.S), padx=10, pady=10)
+    frame.configure(border=0, relief="flat")
+    root.columnconfigure(0, weight=1)
+    root.rowconfigure(0, weight=1)
 
-# Event loop
-root.configure(bg=bg_colour)
-root.mainloop()
+    # Header
+    header_label = tkb.Label(frame, text="KeyForge", font=title_font, anchor="center")
+    subtitle_label = tkb.Label(frame, text="Generate strong passwords with a click.", font=subtitle_font, foreground="#9c9c9c")
+    header_label.grid(column=0, row=0, columnspan=2, sticky=(tk.W), padx=38, pady=(0, 0))
+    subtitle_label.grid(column=0, row=1, columnspan=2, sticky=(tk.W), padx=39, pady=(0, 30))
+
+    # Event loop
+    root.configure(bg=bg_colour)
+    root.mainloop()
     
 
 
