@@ -3,12 +3,13 @@ import string
 
 import tkinter as tk
 from tkinter import font as tkfont
+from tkinter import messagebox
 import ttkbootstrap as tkb
 from ttkbootstrap import Style
 
 
 
-### MAIN FUNCTION ###
+### MAIN FUNCTIONS ###
 
 def password():
 
@@ -48,7 +49,15 @@ def password():
     password_field.insert(0, password)
     password_field.config(state="readonly")
 
+def copy_to_clipboard():
+    text = password_field.get()
 
+    if text:
+        root.clipboard_clear()
+        root.clipboard_append(text)
+        messagebox.showinfo("Success!", "Password copied")
+    else:
+        messagebox.showwarning("Failure!", "No text to be copied. Generate a password first.")
 
 
 ### GUI ###
@@ -99,6 +108,10 @@ if __name__ == "__main__":
     password_field.grid(row=2, column=0, sticky=(tk.W), padx=40, pady=(0, 5))
     password_field.configure(takefocus=1)
     password_field.focus_set()
+
+    # Copy button
+    copy_button = tkb.Button(root, text="Copy", command=copy_to_clipboard, bootstyle="secondary")
+    copy_button.place(relx=0.85, rely=0.629, anchor=tk.CENTER)
 
     # Gen button
     generate_button = tkb.Button(frame, text="Generate", command=password, width=10, style="Custom.TButton")
