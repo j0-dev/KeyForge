@@ -2,7 +2,7 @@ import secrets
 import string
 
 # Password generator function
-def password():
+def password_generator():
 
     lowercase_1 = list(string.ascii_lowercase)
     uppercase_2 = list(string.ascii_uppercase)
@@ -35,8 +35,6 @@ def password():
             password += char
 
     return password
-
-print(password())
 
 
 
