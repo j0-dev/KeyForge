@@ -1,3 +1,3 @@
-document.getElementById('_generate').addEventListener('click', function(e){
-    
+document.getElementById('_copy').addEventListener('click', async function(e){
+    await navigator.clipboard.writeText(document.getElementById('_output').innerText);
 })
