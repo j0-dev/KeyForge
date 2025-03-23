@@ -2,7 +2,12 @@ import secrets
 import string
 
 # Password generator function
-def password_generator():
+def password_generator(length):
+
+    if length < 8:
+        raise ValueError("Password must be at least 8 characters.")
+    elif length > 64:
+        raise ValueError("Maximum password length is 64 characters.")
 
     lowercase_1 = list(string.ascii_lowercase)
     uppercase_2 = list(string.ascii_uppercase)
@@ -11,7 +16,7 @@ def password_generator():
 
     password = ""
 
-    while len(password) < 18:
+    while len(password) < length:
         list_nums = [1, 2, 3, 4]
         list_pick = secrets.choice(list_nums)
 
