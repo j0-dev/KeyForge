@@ -1,0 +1,75 @@
+body, html {
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+    background-color: #1a1a1a;
+    box-sizing: border-box;
+    padding: 40px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 400;
+    text-align: left;
+}
+
+.wrapper {
+    max-width: 600px
+}
+
+img.logo {
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.tag {
+    font-size: 24px;
+    color: white;
+    opacity: 0.7;
+    margin-bottom: 30px;
+}
+
+.output-box {
+    box-sizing: border-box;
+    padding: 12px 36px;
+    color: white;
+    font-size: 20px;
+    border-radius: 50px;
+    background: #484848;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    column-gap: 20px;
+}
+
+button {
+    font-family: 'Chakra Petch', sans-serif;
+    background: white;
+    border: none;
+    box-sizing: border-box;
+    padding: 12px 24px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+button:hover {
+    transform: scale(1.06);
+}
+
+button.copy {
+    background: url(copy_icon.svg), white;
+    background-repeat: no-repeat;
+    background-position: 20% 50%;
+    background-size: 20px 20px;
+    padding: 18px 24px 18px 50px;
+}
+
+button.generate {
+    font-size: 18px;
+    margin-top: 30px;
+    padding: 18px 36px 18px 70px;
+    background: url(refresh_icon.svg), #00BC8C;
+    background-repeat: no-repeat;
+    background-position: 10% 50%;
+    text-align: center;
+    color: white;
+}
